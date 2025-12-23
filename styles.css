@@ -1138,22 +1138,115 @@ h4 {
   color: var(--text-soft);
 }
 
-.privacy-content h3 {
-  margin-top: 1rem;
-  margin-bottom: 0.25rem;
-  font-size: 0.95rem;
+/* ====== INSIGHTS & COMING SOON ====== */
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.privacy-content p {
+.insight-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem 1.4rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.85);
+}
+
+.insight-card:hover::before {
+  opacity: 1;
+}
+
+.insight-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+}
+
+.insight-card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.insight-card p {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.insight-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.2));
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #93c5fd;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.insights-cta {
+  margin-top: 2.5rem;
+  text-align: center;
+  padding: 1.2rem;
+  background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.12), transparent 60%),
+    rgba(15, 23, 42, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.insights-cta p {
   font-size: 0.9rem;
   color: var(--text-soft);
+  margin: 0;
 }
 
-.privacy-content ul {
-  margin: 0.3rem 0 0.4rem;
-  padding-left: 1.1rem;
-  font-size: 0.86rem;
-  color: var(--text-soft);
+.insights-cta a {
+  color: #93c5fd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.insights-cta a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .insight-card {
+    padding: 1.2rem 1rem;
+  }
 }
 
 /* ====== FORM SECTIONS ====== */
