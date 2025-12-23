@@ -197,23 +197,31 @@ h4 {
 }
 
 .brand-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 30%;
-  background: radial-gradient(circle at 10% 0, #22c55e, #38bdf8 40%, #6366f1 90%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.74rem;
-  font-weight: 800;
-  color: #0b1120;
-  box-shadow: 0 12px 35px rgba(56, 189, 248, 0.45);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-mark .logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-mark.small {
-  width: 30px;
-  height: 30px;
-  font-size: 0.7rem;
+  width: 40px;
+  height: 40px;
+}
+
+.brand-mark.small .logo-img {
+  width: 100%;
+  height: 100%;
 }
 
 .brand-text {
@@ -907,23 +915,67 @@ h4 {
   color: var(--text-soft);
 }
 
-.google-embed-placeholder {
-  border-radius: 16px;
-  border: 1px dashed rgba(148, 163, 184, 0.7);
-  padding: 0.7rem 0.8rem;
-  font-size: 0.8rem;
-  color: var(--text-soft);
-  margin-bottom: 0.85rem;
+.google-reviews-embed {
+  margin-bottom: 1rem;
 }
 
-.google-embed-placeholder code {
-  display: inline-block;
-  margin-top: 0.35rem;
-  padding: 0.3rem 0.5rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  font-size: 0.7rem;
+.google-map-container {
+  margin-bottom: 0.8rem;
+}
+
+.google-map-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.google-map-link:hover {
+  transform: translateY(-2px);
+}
+
+.map-preview {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.google-map-link:hover .map-preview {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(99, 102, 241, 0.25));
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.6);
+}
+
+.map-preview p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.map-preview .map-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  margin-top: 0.3rem;
+  font-weight: 400;
+}
+
+.google-reviews-link {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.google-reviews-link .btn {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .map-preview {
+    padding: 1.2rem 0.8rem;
+  }
 }
 
 .mini-review-list {
